@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# set -o xtrace 
+
+MYSED=$(which sed)
+NAME=$1
+TEMPLATE=$2
+SERVICE=$3
+
+${MYSED} "s/<machine>/${NAME}/g" "${TEMPLATE}" >> "cust_${NAME}-${SERVICE}-all.conf"
